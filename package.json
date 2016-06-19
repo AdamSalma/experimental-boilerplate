@@ -1,0 +1,57 @@
+{
+  "name": "angular2-starter",
+  "version": "0.0.1",
+  "description": "",
+  "private": "true",
+  "main": "nodemon ./server/bin/www",
+  "scripts": {
+    "start": "nodemon ./server/bin/www"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AdamSalma/ng2-webpack-boilerplate.git"
+  },
+  "author": "Adam Salma",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AdamSalma/ng2-webpack-boilerplate/issues"
+  },
+  "homepage": "https://github.com/AdamSalma/ng2-webpack-boilerplate#readme",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "cookie-parser": "^1.4.2",
+    "debug": "^2.2.0",
+    "express": "^4.13.4",
+    "express-jwt": "^3.4.0",
+    "http": "0.0.0",
+    "jsonwebtoken": "^7.0.0",
+    "morgan": "^1.7.0",
+    "serve-favicon": "^2.3.0",
+    "webpack-stream": "^3.2.0",
+    "@angular/common": "2.0.0-rc.2",
+    "@angular/compiler": "2.0.0-rc.2",
+    "@angular/core": "2.0.0-rc.2",
+    "@angular/http": "2.0.0-rc.2",
+    "@angular/platform-browser": "2.0.0-rc.2",
+    "@angular/platform-browser-dynamic": "2.0.0-rc.2",
+    "@angular/router": "2.0.0-rc.2",
+    "@angular/router-deprecated": "2.0.0-rc.2",
+    "@angular/upgrade": "2.0.0-rc.2",
+    "systemjs": "0.19.27",
+    "core-js": "^2.4.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-typescript": "^2.13.4",
+    "gulp-typings": "^2.0.0",
+    "merge2": "^1.0.2",
+    "nodemon": "^1.9.2",
+    "typings": "^1.0.4"
+  }
+}
