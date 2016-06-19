@@ -1,5 +1,5 @@
-# experimental-boilerplate
-A simple boilerplate for Angular2, TypeScript, Node-Webkit, Express and SASS. Bundled with Webpack.
+# Experimental Boilerplate
+A (hopefully) simple boilerplate for Node-Webkit, Angular2, Express and SASS. Compiled with Gulp and bundled with Webpack.
 
 ## TODO:
 - ~~Folder structure~~
@@ -9,5 +9,5 @@ A simple boilerplate for Angular2, TypeScript, Node-Webkit, Express and SASS. Bu
 - Bundle with Webpack.
 
 ### NOTE:
-Compiling creates ./builds/
-By default the main folder is builds/development.
+By default the compile output folder is: ./builds/development.
+This is also where express will look to render index.html
