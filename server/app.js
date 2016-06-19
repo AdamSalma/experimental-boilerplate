@@ -12,8 +12,6 @@ var router = express.Router();
 
 
 
-
-
 // uncomment after placing your favicon in /public
 // app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
@@ -24,7 +22,7 @@ app.use(express.static(path.join(__dirname, 'builds/production')));
 
 
 app.use('/', function(req, res, next){
-  res.send('hello');
+  res.send('Hello world');
 });
 
 
