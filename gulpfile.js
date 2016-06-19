@@ -47,7 +47,7 @@ gulp.task('typings', function() {
      return gulp.src("./typings.json")
         .pipe(plumber({ errorHandler: notifyError }))
         .pipe( require('gulp-typings')() )
-        .pipe(notify({ message: 'Webpack complete', onLast: true }));
+        .pipe(notify({ message: 'Typings complete', onLast: true }));
 
 })
 
@@ -73,7 +73,7 @@ gulp.task('ts', function() {
     return merge([
         tsResult.dts.pipe(gulp.dest( PATH.dev + '/js/definitions')),
         tsResult.js.pipe(gulp.dest( PATH.dev + '/js' ))
-            .pipe(notify({ message: 'TypeScript complete', onLast: true }));
+            .pipe(notify({ message: 'TypeScript complete', onLast: true }))
     ]);
 
 });
