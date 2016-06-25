@@ -6,7 +6,7 @@
   "node-main": "./server/bin/www",
   "main": "http://localhost:3000",
   "scripts": {
-    "browser": "nodemon ./bin/www",
+    "browser": "nodemon ./server/bin/www",
     "start": "nodewebkit",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
