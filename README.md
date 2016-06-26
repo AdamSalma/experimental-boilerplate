@@ -2,8 +2,8 @@
 A (hopefully) simple desktop app boilerplate using Node-Webkit, Angular2, Express and Sass. Compiled with Gulp and bundled with Webpack.
 
 ### TODO:
-- Create a simple demo app.
-
+- Use Webpack instead of gulp to compile Sass and TypeScript
+- Loaders...?
 
 ### Completed:
 - ~~Hello world with Node-Webkit + Express + Angular 2~~
