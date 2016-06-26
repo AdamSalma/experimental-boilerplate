@@ -6,7 +6,7 @@ module.exports = {
     ],
     
     output: {
-        filename: "[name].js"
+        filename: "app.scripts.js"
     }
 
 }

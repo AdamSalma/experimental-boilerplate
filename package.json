@@ -1,6 +1,6 @@
 {
   "name": "angular2-starter",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "",
   "private": "true",
   "node-main": "./server/bin/www",
@@ -8,6 +8,7 @@
   "scripts": {
     "browser": "nodemon ./server/bin/www",
     "start": "nodewebkit",
+    "bundle": "webpack ./client/build/index.js ./public/js/app.scripts.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,30 +22,42 @@
   },
   "homepage": "https://github.com/AdamSalma/ng2-webpack-boilerplate#readme",
   "dependencies": {
-    "angular2": "^2.0.0-beta.17",
     "body-parser": "^1.15.1",
     "cookie-parser": "^1.4.2",
     "debug": "^2.2.0",
-    "es6-promise": "^3.2.1",
-    "es6-shim": "^0.35.1",
     "express": "^4.13.4",
     "morgan": "^1.7.0",
-    "rxjs": "^5.0.0-beta.9",
     "serve-favicon": "^2.3.0",
-    "systemjs": "^0.19.31",
     "webpack-stream": "^3.2.0",
-    "zone.js": "^0.6.12"
+    "@angular/common": "2.0.0-rc.3",
+    "@angular/compiler": "2.0.0-rc.3",
+    "@angular/core": "2.0.0-rc.3",
+    "@angular/forms": "0.1.1",
+    "@angular/http": "2.0.0-rc.3",
+    "@angular/platform-browser": "2.0.0-rc.3",
+    "@angular/platform-browser-dynamic": "2.0.0-rc.3",
+    "@angular/router": "3.0.0-alpha.7",
+    "@angular/router-deprecated": "2.0.0-rc.2",
+    "@angular/upgrade": "2.0.0-rc.3",
+    "core-js": "^2.4.0",
+    "reflect-metadata": "0.1.3",
+    "rxjs": "^5.0.0-beta.9",
+    "zone.js": "^0.6.12",
+    "angular2-in-memory-web-api": "0.0.12",
+    "bootstrap": "^3.3.6"
   },
   "devDependencies": {
-    "nodewebkit": "^0.11.6",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
+    "gulp-concat": "^2.6.0",
     "gulp-sass": "^2.3.2",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-typescript": "^2.13.4",
     "gulp-typings": "^2.0.0",
     "merge2": "^1.0.2",
     "nodemon": "^1.9.2",
-    "typings": "^1.0.4"
+    "nodewebkit": "^0.11.6",
+    "typings": "^1.0.4",
+    "webpack": "^1.13.1"
   }
 }

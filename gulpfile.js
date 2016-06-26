@@ -7,6 +7,7 @@ var gulpTypings = require('gulp-typings');
 var webpack = require('webpack-stream');
 var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
+var concat = require('gulp-concat');
 
 
 /*---------*/
@@ -14,8 +15,8 @@ var autoprefixer = require('gulp-autoprefixer');
 /*---------*/
 
 var PATH = {
-    //config 
-    webpack_config: require('./client/config/webpack.config.js'),
+    // config 
+    webpack_config: './client/config/webpack.config.js',
     ts_config: './client/config/tsconfig.json',
     
     // in
@@ -24,7 +25,7 @@ var PATH = {
     
     // out
     js: './client/build',
-    css: './client/build/',
+    css: './public/css',
     webpack: "./public/js"
 };
 
@@ -39,11 +40,6 @@ var sassPrefix = [
     "Safari >= 6"
 ];
 
-var notifyError =  notify.onError({
-    "title": "ERROR",
-    "message": "Error: <%= error.message %>"
-});
-
 /* ------- */
 /*  TASKS  */
 /* ------- */
@@ -52,13 +48,23 @@ var notifyError =  notify.onError({
 gulp.task('typings', function() {
      return gulp.src("typings.json")
         .pipe(gulpTypings()); 
-})
+});
+
+
 
 // Webpack
-// - Compiles typescript before bundling
-gulp.task('ng-bundle', ['ng-ts'], function() {
+// - Compiles before bundling
+gulp.task('ng-bundle', ['sass', 'ng-ts'], function() {
     return gulp.src( PATH.js + "/index.js" )
-        .pipe( webpack( PATH.webpack_config ) )
+        .pipe( webpack( require(PATH.webpack_config)))
+        .pipe( gulp.dest( PATH.webpack ) )
+});
+
+// Webpack
+// - No compilation
+gulp.task('bundle', function() {
+    return gulp.src( PATH.js + "/index.js" )
+        .pipe( webpack( require(PATH.webpack_config)))
         .pipe( gulp.dest( PATH.webpack ) )
 });
 
@@ -80,8 +86,9 @@ gulp.task('sass', function () {
  
     return gulp.src(PATH.sass + '/*.scss')
         .pipe(sourcemaps.init())
-        .pipe(sass({ outputStyle: 'nested' }))
+        .pipe(sass.sync({ outputStyle: 'nested' }).on('error', sass.logError))
         .pipe(autoprefixer({ browsers: sassPrefix }))
+        .pipe(concat('app.styles.css'))
         .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest(PATH.css))
 
@@ -102,10 +109,9 @@ gulp.task('watch', function () {
     // Watch sass files and execute using 'ng-ts'
     gulp.watch(PATH.sass + '/**/*', ['sass'])
         .on("change", function (event) {
-            console.log('[TYPESCRIPT] File ' + event.path.replace(/^.*(\\|\/|\:)/, '') + ' was ' + event.type + ', compiling...');
+            console.log('[SASS] File ' + event.path.replace(/^.*(\\|\/|\:)/, '') + ' was ' + event.type + ', compiling...');
         });
-
 });
 
-gulp.task('default', ['ng-bundle']);
+gulp.task('default', ['bundle']);
 
